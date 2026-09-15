@@ -1,0 +1,50 @@
+[package]
+name = "rust-actix-web-loans-api"
+version = "1.0.0"
+edition = "2021"
+description = "REST API for loan management system built with Rust and Actix Web"
+authors = [""]
+license = "MIT"
+
+[lib]
+name = "rust_actix_web_loans_api"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-actix-web-loans-api"
+path = "src/main.rs"
+
+[dependencies]
+actix-web = "4.9.0"
+actix-web-validator = "5.0.1"
+anyhow = "1.0.79"
+diesel = { version = "2.1.0", features = ["postgres", "r2d2", "chrono", "serde_json"] }
+diesel_migrations = "2.1.0"
+dotenv = "0.15.0"
+serde = { version = "1.0.196", features = ["derive"] }
+serde_json = "1.0.113"
+thiserror = "1.0.56"
+tokio = { version = "1.36.0", features = ["full"] }
+validator = { version = "2.1.0", features = ["derive"] }
+
+[dev-dependencies]
+actix-rt = "4.0.0"
+actix-service = "2.0.0"
+actix-testing = "1.0.0"
+http = "1.0.0"
+
+[features]
+default = ["diesel/postgres"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[workspace]
+members = []
+resolver = "2"

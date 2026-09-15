@@ -1,0 +1,16 @@
+{
+  "name": "rust-actix-web-loans-api",
+  "version": "1.0.0",
+  "description": "REST API for loan management system built with Rust and Actix Web",
+  "main": "src/main.rs",
+  "scripts": {
+    "dev": "cargo run",
+    "build": "cargo build --release",
+    "test": "cargo test"
+  },
+  "keywords": ["rust", "actix-web", "api", "rest", "loans"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
